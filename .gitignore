@@ -1,0 +1,13 @@
+/.bsp/
+/.idea/
+/gradle/
+/project/project/
+/project/target/
+/target/
+.DS_Store
+/http/target/
+/grpc/target/
+.bloop/
+.metals/
+.vscode/
+

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.eambrosio.primenumbers";
+option java_outer_classname = "PrimeNumbersProto";
+
+service PrimeNumbersService {
+  // Ask for prime numbers up to the given number
+  rpc StreamPrimeNumbers (PrimeNumbersRequest) returns (stream PrimeNumbersReply) {}
+
+}
+
+// The request message containing the number you ask for
+message PrimeNumbersRequest {
+  int64 number = 1;
+}
+
+// The response message containing the prime numbers up to the given number
+message PrimeNumbersReply {
+  string primeNumbers = 1;
+}

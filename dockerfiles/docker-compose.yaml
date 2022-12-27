@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  grpc-server:
+    build:
+      dockerfile: dockerfiles/grpc-server/Dockerfile
+      context: ../
+    ports:
+       - "9000:9000"
+
+  http-server:
+    build:
+      dockerfile: dockerfiles/http-server/Dockerfile
+      context: ../
+    ports:
+      - "8000:8000"
+    depends_on:
+      - grpc-server
